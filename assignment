@@ -20,11 +20,31 @@ inspector = inspect(engine)
 fields = inspector.get_columns('BoardGames')
 field_names = pd.DataFrame.from_dict(fields)
 field_names
+# there are 81 columns in 'BoardGames'
+
+fields = inspector.get_columns('bgg.ldaOut.top.documents')
+field_names = pd.DataFrame.from_dict(fields)
+field_names
+# there are 4 columns in 'bgg.ldaOut.top.documents'
+
+fields = inspector.get_columns('bgg.ldaOut.top.terms')
+field_names = pd.DataFrame.from_dict(fields)
+field_names
+# there are 4 columns in 'bgg.ldaOut.top.terms'
+
+fields = inspector.get_columns('bgg.ldaOut.topics')
+field_names = pd.DataFrame.from_dict(fields)
+field_names
+# there are 2 columns in 'bgg.ldaOut.topics'
+
+fields = inspector.get_columns('bgg.topics')
+field_names = pd.DataFrame.from_dict(fields)
+field_names
+# there are 74 columns in 'bgg.topics'
 
 
 bg = "SELECT * FROM BoardGames;"
 
 data_df = pd.read_sql(bg, engine)
 data_df
-
 # there are 90400 rows
