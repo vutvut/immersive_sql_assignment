@@ -44,7 +44,27 @@ field_names
 
 
 bg = "SELECT * FROM BoardGames;"
-
 data_df = pd.read_sql(bg, engine)
 data_df
 # there are 90400 rows
+
+topdoc = "SELECT * FROM 'bgg.ldaOut.top.documents';"
+data_df = pd.read_sql(topdoc, engine)
+data_df
+# there are 288 rows
+
+top = "SELECT * FROM 'bgg.ldaOut.top.terms';"
+data_df = pd.read_sql(top, engine)
+data_df
+# there are 250 rows
+
+topics = "SELECT * FROM 'bgg.ldaOut.topics';"
+data_df = pd.read_sql(topics, engine)
+data_df
+# there are 29229 rows
+
+topics2 = "SELECT * FROM 'bgg.topics';"
+data_df = pd.read_sql(topics2, engine)
+data_df
+# there are 29313 rows
+
